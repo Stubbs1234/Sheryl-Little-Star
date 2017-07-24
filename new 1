@@ -1,0 +1,41 @@
+var name = upload.name.value;
+var item = upload.Item.value;
+var des = upload.des.value;
+var group = upload.group.value;
+var email = Parse.User.current().get("email");
+var nameUploader = Parse.User.current().get("FirstName");
+//"QWFTpM6Dkjo65WbW11GHcdg1L7l3ygpZIxAe3lZJ"
+var GameUpload = Parse.Object.extend(con);
+var gameUpload = new GameUpload();
+gameUpload.set("NameGame", name);
+gameUpload.set("item", item);
+gameUpload.set("Video", parseFile);
+gameUpload.set("des", des);
+gameUpload.set("group", group);
+//gameUpload.save();
+gameUpload.save(null, {
+  success: function(gameUpload) {
+    // Execute any logic that should take place after the object is saved.
+    alert("Saved");
+    $("#show1").show();
+    $("#show2").hide();
+    var id = gameUpload.id;
+    window.location.href = "http://scoutgames.co.uk/uploademail.php?email="+email+"&id="+id+"&con="+con;
+  },
+  error: function(gameUpload, error) {
+    // Execute any logic that should take place if the save fails.
+    // error is a Parse.Error with an error code and message.
+    alert("Failed to create new object, with error code: " + error.message);
+  }
+})
+});
+
+<form name="upload" method="post" role="form">
+<input type="text" name="name" placeholder="Name Of The Game" class="textFields"/>
+<input type="text" name="Item" placeholder="Equipment" class="textFields"/>
+<input type="file" id="profilePhotoFileUpload" name="Video" placeholder="Upload A Video" class="textFields"/>
+<input type="text" name="des" placeholder="Description" class="textFields"/>
+<input type="text" id="group" class="textFields"/>
+<input id="uploadbutton" type="submit" value="Upload Game" class="buttons"/>
+<input id="world" type="submit" value="Upload Game To The World" class="buttons"/>
+</form>

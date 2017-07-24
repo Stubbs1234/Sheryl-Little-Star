@@ -1,0 +1,166 @@
+ <!DOCTYPE html>
+ <head>
+ <meta charset="UTF-8">
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <!--This script allows the correct style to be loaded for the right screen size-->
+<script type="text/javascript">
+	//Setting the height and width 0 ready for later
+	var height = 0;
+	var width = 0;
+	//this gets the the size of the screen
+ function show(){
+	if (!document.all&&!document.layers&&!document.getElementById)
+	return
+	console.log(screen.width)
+	width = screen.width;
+	console.log(screen.height)
+	height = screen.height;
+	console.log(screen.colorDepth)
+	console.log(screen.pixelDepth)
+	console.log(screen.availWidth)
+	console.log(screen.availHeight)
+	}
+	//this function load the small screen style sheet
+function loadjscssfile1(){
+	console.log("running small")
+	var cssId = 'smallScreenSize'; 
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'smallScreenSize.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this loads the normal size stylesheet
+function loadjscssfile(){
+	console.log("running")
+	var cssId = 'style';  
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'style.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this runs the funcation show which will run the javascript 
+	show()
+	//this works out what style is going to be needed
+	if (width <= 1280 && height <= 1024) {
+	console.log("correct")
+	loadjscssfile1()
+	} else {
+	loadjscssfile()
+	}
+ </script>
+<title>Contact</title>
+<script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
+ <script src="form.js"></script>
+ <script type="text/javascript">
+$(document).ready(function () {
+    if(window.location.href.indexOf("sent") > -1) {
+      $("#sent").show();
+    }
+});
+</script>
+ </head>
+ <body>
+ 	<!--this is the links in the top concor that links to facebook, google plus and email-->
+ 	<div id="links">
+	<a href="https://www.facebook.com/groups/383349625208231/" target="blank"><img src="images/Facebook_Square@2x.png" title="Facebook" alt="Facebook"/></a>
+	<a href="https://plus.google.com/101925221517317221153/about" target="blank"><img src="images/Google_Plus_Square@2x.png" title="Google Plus" alt="Google Plus"/></a>
+	<a href="mailto:121944@student.midchesh.ac.uk" target="blank"><img src="images/Mail@2x.png" title="E-Mail" alt="E-Mail"/></a>
+ </div>
+<div id="logo">
+<!--this shows the logo of the business-->
+	<img src="images/logo.png" alt="Logo" title="Logo" class="logoPic"/>
+</div>
+<!--Main 1 id the continer for the website-->
+ <div id="main1"> 
+ <!--this shows the nav bar on screen-->
+ 	<div id="nav">
+			<a href="index.html"><img src="images/home.png" alt="Home" title="Home" class="home"/></a>
+			<a href="about.html"><img src="images/about.png" alt="About" title="About" class="about"/></a>
+			<a href="fees.html"><img src="images/fees.png" alt="Fees" title="Fees" class="fees"/></a>
+			<a href="activity.html"><img src="images/activity.png" title="Activity" alt="Activity" class="activity"/></a>
+			<a href="contact.html"><img src="images/contact.png" title="Contact" alt="Contact" class="contact"/></a>
+	</div>
+ <h1>Contact</h1>
+ 	<div id="sent">
+ 		<p>Your message has sent</p>
+ 	</div>
+ 
+ <div id="map">
+		  <!--Map into Google Maps-->
+		  	  <p>If you have an inquiry please drop me an email using the comment box below</p> 
+		
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2394.3406951306606!2d-2.4613639843044957!3d53.122029479932586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487af610da02017f%3A0x6a7e6c34b0a2ce9f!2sSheryl&#39;s+Little+Stars+(Childminder)!5e0!3m2!1sen!2suk!4v1451848708672" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br>
+	
+
+<!--Start of the form with link into the php file for sending-->
+<form name="exampleForm" action="email.php" method="post" onsubmit="return checkForm()">
+<!--Fieldset personal details-->
+<fieldset>
+	<legend>Personal Details</legend>
+	<p><label>Title:</label><select name="title" title="MR OR MRS" class="selectBox"><option value="mr">Mr</option><option value="mrs">Mrs</option><option value="miss">Miss</option><option value="sir">Sir</option><option value="dr">Dr</option><option value="prof">Prof</option><select></p>
+	<p><label for="forename">First Name: </label>    <input type="text" id="forename" name="forename" onfocus="codeStyle(this.id)" onblur="clearStyle(this.id)" size="20" maxlength="20" placeholder="Please enter First name"/></p>
+	<p><label for="surname">Last Name:</label>      <input type="text" id="surname" name="surname" onfocus="codeStyle(this.id)" onblur="clearStyle(this.id)" size="20" maxlength="20" placeholder="Please enter Last name"/></p>
+</fieldset>
+<!--Fieldset contact details-->
+<fieldset>
+		<legend>Contact Details</legend>
+	<p><label for="address">Address:</label>       <input type="text" id="address" name="address" onfocus="codeStyle(this.id)" onblur="clearStyle(this.id)" size="20" maxlength="20" placeholder="Please enter your address"/></p>
+	<p><label for="town">Town:</label>       <input type="text" id="town" name="town" onfocus="codeStyle(this.id)" onblur="clearStyle(this.id)" size="20" maxlength="20" placeholder="Please enter your town"/></p>
+	<p><label for="postcode">Postcode: </label> <input type="text" id="postcode" name="postcode" onfocus="codeStyle(this.id)" onblur="clearStyle(this.id)" size="20" maxlength="20" placeholder="Please enter your postcode"> </p>
+	<p><label for="pnumber">Phone Number: </label> <input type="text" id="pnumber" name="phone" onfocus="codeStyle(this.id)" onblur="clearStyle(this.id)" size="25" maxlength="25" placeholder="Please enter your phone number"> </p>
+	<p><label for="email">e-mail: </label>        <input type="text" id="email" name="email" onfocus="codeStyle(this.id)" onblur="clearStyle(this.id)" size="25" maxlength="25" placeholder="Please enter your email address"></p>
+	</fieldset>
+	<!--Fieldset further information-->
+<fieldset>
+	<legend>Further Information</legend>
+	<p>What is the reason of contact today</p>
+	<!--Radio Buttons-->
+	<p><input type="radio" checked name="reason" value="Question" />Question</p>
+	<p> <input type="radio" name="reason" value="Feedback about the website" />Feedback on website</p>
+	<p><input type="radio" name="reason" value="RWP" onclick="visible1('state1')"/>Requested a copy of the welcome pack</p>
+	<p><input type="radio" name="reason" value="other" onclick="visible('state')" />Other</p>
+	<br>
+<!--other state-->
+<p id="state" style="display:none;">Please state: <input type="text" name="other_state" /><br></p>
+
+
+	<!--DropDown List-->
+	<select name="way" id="state1" style="display:none;">
+	<option value="please select">Please Select a way you would like the pack</option>
+	<option value="Letter">Letter</option>
+	<option value="Email">Email</option>
+	<option value="Any">Any</option><br></p>
+	</select>
+      <!--Comments Box-->                        
+	<p>Comments</p>
+	<p><textarea rows="5" cols="30" name="comments"></textarea></p>
+</fieldset>
+
+	<!--Buttons for submit and reset-->
+	<p><input type="submit" value="Send">
+	<input type="reset" value="Reset"></p>
+	</form>
+	<!--End of the form-->
+		  </div>
+ </div>
+ <div class="footer">
+<small><p>Copyright &copy; Sheryl Stanley <span id="year"></span>, All rights reserved</p></small>
+<small<p><a href="sitemap.html">Site Map</a></p></small>
+<small><p>Powered By <a href="https://parse.com">Parse.com</a></p></small>
+</div>
+ </body>
+ </html>

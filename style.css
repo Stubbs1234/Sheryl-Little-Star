@@ -1,0 +1,228 @@
+body {
+background:#FFF2CC;
+font-family: corbel, "Calisto MT", sans-serif;
+}
+
+h1 {
+color: #001B1B;
+font-size: xx-large;
+text-align: center;
+}
+
+h2 {
+
+font-size: large;
+text-align: center;
+
+}
+
+
+p {
+font-size: large;
+
+}
+
+
+li{
+font-size: large;
+}
+
+td {
+font-size: large;
+}
+
+fieldset {
+        border: 1px solid lightgray;
+    }
+	
+
+#nav a:link {
+color: #ffffff;
+ text-decoration: none;
+}
+
+/* visited link */
+#nav a:visited {
+    color: #ffffff;
+}
+
+/*sand pit picture on activity page*/
+.actPicture {
+float: right;
+margin-right: 200px;
+Margin-top: 50px
+}
+/*class for the two images on the home page*/	
+.homeBottom {
+ display: block;
+    margin: 0 auto;
+}
+table {
+    border-collapse: collapse;
+	width: 100%;
+}
+table, th, td {
+    border: 1px solid black;
+	height: 50px;
+}
+/*main div*/
+#main1 {
+background: #DEEBF7;
+border: 2px #2E75B6 solid;
+margin-left: 40px;
+margin-right: 40px;
+margin-top: 100px;
+margin-bottom: 40px;
+}
+
+#heading {
+	margin: 0 auto;
+	text-align: center;
+	
+}
+/*Nav Bar*/
+#nav {
+margin: 0 auto;
+text-align: center;
+}
+
+/*TILT NAV BAR*/
+.home {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+.home:hover {
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+       -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+.about {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+.about:hover {
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+       -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+.fees {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+.fees:hover {
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+       -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+.activity {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+.activity:hover {
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+       -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+.contact{
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+.contact:hover {
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+       -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+/*logo picture*/
+.logoPic {
+margin-left: 40px;
+width: 800px;
+}
+/*this links to the fees page make the text red*/
+.red {
+color: red;
+font-weight: bold;
+text-decoration: underline;
+}
+/*links div*/
+#links
+{
+	/*float: right;*/
+	position: absolute;
+	top:15px;
+   right:15px;
+	background: #FFF2CC;
+}
+
+#map {
+text-align: center;
+	float: center;
+}
+/*shows the sent div*/
+#sent {
+padding: 5px;
+margin: 100px;
+background-color: #92D050;
+border: black solid 2px;
+display: none;
+text-align: center;
+}
+
+select {
+margin: auto;
+text-align; center;	
+}
+
+.footer {
+ margin: 0 auto;
+text-align: center;
+}
+
+#popupbox{
+margin: 0; 
+margin-left: 40%; 
+margin-right: 40%;
+margin-top: 50px; 
+padding-top: 10px; 
+width: 20%; 
+height: 150px; 
+position: absolute; 
+background: #FFF2CC; 
+border: solid #000000 2px; 
+z-index: 9; 
+font-family: arial; 
+visibility: hidden; 
+    /*display: none;*/
+}

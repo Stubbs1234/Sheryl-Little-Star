@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+ <head>
+ <meta charset="UTF-8">
+<!--This script allows the correct style to be loaded for the right screen size-->
+ <script type="text/javascript">
+	//Setting the height and width 0 ready for later
+	var height = 0;
+	var width = 0;
+	//this gets the the size of the screen
+ function show(){
+	if (!document.all&&!document.layers&&!document.getElementById)
+	return
+	console.log(screen.width)
+	width = screen.width;
+	console.log(screen.height)
+	height = screen.height;
+	console.log(screen.colorDepth)
+	console.log(screen.pixelDepth)
+	console.log(screen.availWidth)
+	console.log(screen.availHeight)
+	}
+	//this function load the small screen style sheet
+function loadjscssfile1(){
+	console.log("running small")
+	var cssId = 'smallScreenSize'; 
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'smallScreenSize.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this loads the normal size stylesheet
+function loadjscssfile(){
+	console.log("running")
+	var cssId = 'style';  
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'style.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this runs the funcation show which will run the javascript 
+	show()
+	//this works out what style is going to be needed
+	if (width <= 1280 && height <= 1024) {
+	console.log("correct")
+	loadjscssfile1()
+	} else {
+	loadjscssfile()
+	}
+ </script>
+<title>My Policies</title>
+ </head>
+ <body>
+  <!--this is the links in the top concor that links to facebook, google plus and email-->
+<div id="links">
+	<a href="https://www.facebook.com/groups/383349625208231/" target="blank"><img src="images/Facebook_Square@2x.png" title="Facebook" alt="Facebook"/></a>
+	<a href="https://plus.google.com/101925221517317221153/about" target="blank"><img src="images/Google_Plus_Square@2x.png" title="Google Plus" alt="Google Plus"/></a>
+	<a href="mailto:121944@student.midchesh.ac.uk" target="blank"><img src="images/Mail@2x.png" title="E-Mail" alt="E-Mail"/></a>
+ </div>
+  <!--this shows the logo of the business-->
+<div id="logo">
+	<img src="images/logo.png" alt="Logo" title="Logo" class="logoPic"/>
+</div>
+<!--Main 1 id the continer for the website-->
+ <div id="main1"> 
+	<div id="nav">
+	<!--this shows the nav bar on screen-->
+	<a href="index.html"><img src="images/home.png" alt="Home" title="Home" class="home"/></a>
+	<a href="about.html"><img src="images/about.png" alt="About" title="About" class="about"/></a>
+	<a href="fees.html"><img src="images/fees.png" alt="Fees" title="Fees" class="fees"/></a>
+	<a href="activity.html"><img src="images/activity.png" title="Activity" alt="Activity" class="activity"/></a>
+	<a href="contact.html"><img src="images/contact.png" title="Contact" alt="Contact" class="contact"/></a>
+	</div>
+ </div>
+ <!--main text of the page-->
+ <h1>Policies, Procedures and Consent</h1>
+ <h3>Policies</h3>
+ <p>I have the following policies and prodecures in place, for the protection and safety of the children, you as parents and myself: (You Will able to read these fully at a visit)</p>
+	<!--this is a list of the policies that sheryl has--> 
+	<ul>
+		<li>Accident &amp; Incident Policy</li>
+		<li>Admissions Policy</li>
+		<li>Alcohol &amp; Drugs Policy</li>
+		<li>Behaviour Policy</li>
+		<li>Bullying Policy</li>
+		<li>Creche Policy</li>
+		<li>Complaints Policy</li>
+		<li>Confidentiality Policy</li>
+		<li>Drop Off and Collection Policy</li>
+		<li>Equal Opportunities Policy</li>
+		<li>Fire Policy</li>
+		<li>Head Lice Policy</li>
+		<li>Health &amp; Safety Policy</li>
+		<li>Healthy Eating Policy</li>
+		<li>Hygiene policy</li>
+		<li>Independent Artrival Policy</li>
+		<li>Illness Policy</li>
+		<li>Learning & Play Policy</li>
+		<li>Lost Child Policy</li>
+		<li>Medicine Policy</li>
+		<li>Mobile Phone Policy</li>
+		<li>Nappy and Toilet Training Policy</li>
+		<li>Outing Policy</li>
+		<li>Overnight Carere Policy</li>
+		<li>Physical Contact Policy</li>
+		<li>Safeguarding Policy</li>
+		<li>Special Needs & Special Educational Needs Policy</li>
+		<li>Settling In Policy</li>
+		<li>Television policy</li>
+		<li>Transporting Children in a Car Policy</li>
+		<li>Working With Parents Policy</li>
+	</ul>
+<h3>Consent</h3>
+<p>I require numerous persmission slips to be completed / refused prior to undertaking any childminding. These include:</p>
+	<!--this is a list of the consemt that are need of the parents-->
+	<ul>
+		<li>Routine Outings Permission</li>
+		<li>Pre-arranged Alternative care (in case of childminder sickness)</li>
+		<li>Sun Protection Cream Permission</li>
+		<li>Observation Permission</li>
+		<li>Outdoor Play Permission</li>
+		<li>Transporting in a Vehicle Permission</li>
+		<li>Photograph Permission</li>
+		<li>Parents Closed Facebook Page</li>
+	</ul>
+</div>
+</div>
+<div class="footer">
+<small><p>Copyright &copy; Sheryl Stanley <span id="year"></span>, All rights reserved</p></small>
+<small<p><a href="sitemap.html">Site Map</a></p></small>
+<small><p>Powered By <a href="https://parse.com">Parse.com</a></p></small>
+</div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+ <head>
+ <meta charset="UTF-8">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.0.min.js"></script>
+ <!--This script allows the correct style to be loaded for the right screen size-->
+ <script type="text/javascript">
+	//Setting the height and width 0 ready for later
+	var height = 0;
+	var width = 0;
+	//this gets the the size of the screen
+ function show(){
+	if (!document.all&&!document.layers&&!document.getElementById)
+	return
+	console.log(screen.width)
+	width = screen.width;
+	console.log(screen.height)
+	height = screen.height;
+	console.log(screen.colorDepth)
+	console.log(screen.pixelDepth)
+	console.log(screen.availWidth)
+	console.log(screen.availHeight)
+	}
+	//this function load the small screen style sheet
+function loadjscssfile1(){
+	console.log("running small")
+	var cssId = 'smallScreenSize'; 
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'smallScreenSize.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this loads the normal size stylesheet
+function loadjscssfile(){
+	console.log("running")
+	var cssId = 'style';  
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'style.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this runs the funcation show which will run the javascript 
+	show()
+	//this works out what style is going to be needed
+	if (width <= 1280 && height <= 1024) {
+	console.log("correct")
+	loadjscssfile1()
+	} else {
+	loadjscssfile()
+	}
+ </script>
+<title>Upload</title>
+		<!--this show if the user has not got javascript asking them to download it to view the website-->
+	<noscript>
+	your web browsers does not support javascrip, Please download it <a href="https://www.java.com/en/download/">here</a>
+</noscript>
+ </head>
+ <body>
+ <!-- this is the main div-->
+ <div id="main1"> 
+ <!--this is the main div-->
+ 	<div id="nav">
+ 		<a href="index.html"><img src="images/home.png" alt="Home" title="Home" class="home"/></a>
+	 </div>
+	 <!--this is the login div-->
+ <div id="login">
+ <!--this is the login form-->
+<form class="login" role="form" name="login" method="post" onsubmit="tryLogin(this); event.preventDefault();">
+	<input type="text" id="username1" class="form-control" placeholder="Username"/>
+	<input type="password" id="password1" class="form-control" placeholder="Password"/><br>
+	<br><button id="loginButton" class="button" type="submit" alt="Login">Login</button>
+ </form>
+ <!--this connects to parse.com and allows them to login-->
+ <script type="text/javascript">
+     Parse.initialize("amnZxwMwLA9rWnfbeSEvQx031gpgsSaFx11kR2zd", "4txvLwRkk8LVJVW05J1ynpVO2gg0eUqkt8wTE2bO");
+	$('.login').submit(function(event) {
+	event.preventDefault();
+	//gets the details from the text boxes
+	var username = document.getElementById("username1").value;
+	var password = document.getElementById("password1").value;
+    //checks the server with the login detils 
+	Parse.User.logIn(username, password, {
+					//success shows the upload div
+					success: function(user) {
+						$("#main2").show();
+						$("#login").hide();
+						console.log('Error Message:', user);
+					},
+					// If there is an error shows an alert 
+					error: function(user, error) {
+						alert("Please Try again!");
+						console.log("Error Message:", error);
+					}
+				})
+				});
+		</script>
+</div>
+<!--upload shows if the user logins successfully-->
+<div id="main2" style="display:none;">
+ <h1>Upload</h1>
+ <form name="upload" method="post" role="form">
+	<input type="text" name="date" placeholder="Date" class="textFields"/>
+	<input type="text" name="news" placeholder="News Heading" class="textFields"/>
+	<input type="text" name="des" placeholder="Description" class="textFields"/>
+	<input id="uploadbutton" type="submit" value="Upload News" class="buttons"/>
+</form>
+<script type="text/javascript">
+$('#uploadbutton').click(function () {
+event.preventDefault();
+     //parse id
+     Parse.initialize("amnZxwMwLA9rWnfbeSEvQx031gpgsSaFx11kR2zd", "4txvLwRkk8LVJVW05J1ynpVO2gg0eUqkt8wTE2bO");
+	//get the data that has been enter into the text boxes
+	var date = upload.date.value;
+	var news = upload.news.value;
+	var des = upload.des.value;
+	//upload to parse server
+	var GameScore = Parse.Object.extend("newsUpdates");
+	var gameScore = new GameScore();
+
+	gameScore.set("dateAdded", date);
+	gameScore.set("heading", news);
+	gameScore.set("des", des);
+	//success
+	gameScore.save(null, {
+  success: function(gameScore) {
+    // Execute any logic that should take place after the object is saved.
+    alert('Complete');
+  },
+  //error shows
+  error: function(gameScore, error) {
+    // Execute any logic that should take place if the save fails.
+    // error is a Parse.Error with an error code and message.
+    alert('Failed to create new object, with error code: ' + error.message);
+  }
+	})
+	});
+</script>
+ </div>
+ </div>
+ </body>
+ </html>

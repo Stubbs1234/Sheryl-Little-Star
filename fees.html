@@ -1,0 +1,141 @@
+ <!DOCTYPE html>
+ <head>
+ <meta charset="UTF-8">
+ <!--This script allows the correct style to be loaded for the right screen size-->
+<script type="text/javascript">
+	//Setting the height and width 0 ready for later
+	var height = 0;
+	var width = 0;
+	//this gets the the size of the screen
+ function show(){
+	if (!document.all&&!document.layers&&!document.getElementById)
+	return
+	console.log(screen.width)
+	width = screen.width;
+	console.log(screen.height)
+	height = screen.height;
+	console.log(screen.colorDepth)
+	console.log(screen.pixelDepth)
+	console.log(screen.availWidth)
+	console.log(screen.availHeight)
+	}
+	//this function load the small screen style sheet
+function loadjscssfile1(){
+	console.log("running small")
+	var cssId = 'smallScreenSize'; 
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'smallScreenSize.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this loads the normal size stylesheet
+function loadjscssfile(){
+	console.log("running")
+	var cssId = 'style';  
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'style.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this runs the funcation show which will run the javascript 
+	show()
+	//this works out what style is going to be needed
+	if (width <= 1280 && height <= 1024) {
+	console.log("correct")
+	loadjscssfile1()
+	} else {
+	loadjscssfile()
+	}
+ </script>
+<title>Fees</title>
+ </head>
+ <body>
+	 <!--this is the links in the top concor that links to facebook, google plus and email-->
+ 	<div id="links">
+	<a href="https://www.facebook.com/groups/383349625208231/" target="blank"><img src="images/Facebook_Square@2x.png" title="Facebook" alt="Facebook"/></a>
+	<a href="https://plus.google.com/101925221517317221153/about" target="blank"><img src="images/Google_Plus_Square@2x.png" title="Google Plus" alt="Google Plus"/></a>
+	<a href="mailto:121944@student.midchesh.ac.uk" target="blank"><img src="images/Mail@2x.png" title="E-Mail" alt="E-Mail"/></a>
+ </div>
+<div id="logo">
+<!--this shows the logo of the business-->
+	<img src="images/logo.png" alt="Logo" title="Logo" class="logoPic"/>
+</div>
+
+ <div id="main1">
+ <!--Main 1 id the continer for the website--> 
+ <div id="nav">
+  <!--this shows the nav bar on screen-->
+	<a href="index.html"><img src="images/home.png" alt="Home" title="Home" class="home"/></a>
+	<a href="about.html"><img src="images/about.png" alt="About" title="About" class="about"/></a>
+	<a href="fees.html"><img src="images/fees.png" alt="Fees" title="Fees" class="fees"/></a>
+	<a href="activity.html"><img src="images/activity.png" title="Activity" alt="Activity" class="activity"/></a>
+	<a href="contact.html"><img src="images/contact.png" title="Contact" alt="Contact" class="contact"/></a>
+ </div>
+ <!--main text of the about page-->
+ <h1> Fees</h1>
+ <p>I work full time Monday to Friday.
+My hours of work are 8am - 6pm, however I am willing to negotiate longer hours and consider weekends if required (additional fees may be incurred).
+I am registered to mind 6 children under the age of 8. Of these 3 may be under 5 and only 1 child may be under the age of 1. My public liability insurance along with Ofsted, also allows me to mind children over the age of 8 years.</p>
+ <p>I offer a four week settling in period where no notice is required should you decide to take your child out of our setting. This gives you the chance to check you and your child are happy with our setting, and likewise it gives us the chance to see how your child adapts to us as carers and the other children within our setting. </p>
+ <!--this table show the cost of the service-->
+ <table>
+ 	<tr>
+ 	<th colspan="2">Childminder Fees</th>
+ 	</tr>
+ 	<tr>
+ 	<th>Fees</th><th>Price</th>
+ 	</tr>
+ 	<tr>
+ 	<td>Per Hour</td><td>£4.00</td>
+ 	</tr>
+ 	<tr>
+ 	<td>Day Rate (8hrs)</td><td>£30.00</td>
+ 	</tr>
+ 	<tr>
+ 	<td>Bank Holiday Per Hour</td><td>£8.00</td>
+ 	</tr>
+ 	<tr>
+ 	<td>After 6pm Per Hour</td><td>£5.00</td>
+ 	</tr>
+ 	<tr>
+ 	<td>Evening Meal</td><td>£1.50</td>
+ 	</tr>
+ 	<tr>
+ 	<th colspan="2">Charges for Absence</th>
+ 	</tr>
+ 	<tr>
+ 	<td>Child/Parent Illness or Holiday</td><td>Full Fee</td>
+ 	</tr>
+ 	<tr>
+ 	<td>Childminder Illness or Holiday</td><td>No Fee</td>
+ 	</tr>
+ 	<tr>
+ 	<td>Bank Holiday</td><td>Full Fee</td>
+ 	</tr>
+ </table>
+ <!--this show extra information-->
+ 	<p>*Should i be unable to provide childcare due to holidays or an extremely rare unforeseeable circumstance there will be no FEES CHARGED</P>
+ 	<p>*2,3,4 yr old free goverment funding avabilable (2 yr old subject to conditions)</P>
+ 	<p>*I also offer term time only contracts without a retainer fee</P>
+ </div>
+ <div class="footer">
+<small><p>Copyright &copy; Sheryl Stanley <span id="year"></span>, All rights reserved</p></small>
+<small<p><a href="sitemap.html">Site Map</a></p></small>
+<small><p>Powered By <a href="https://parse.com">Parse.com</a></p></small>
+</div>
+ </body>
+ </html>

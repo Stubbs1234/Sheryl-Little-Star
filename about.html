@@ -1,0 +1,129 @@
+ <!DOCTYPE html>
+ <head>
+ <meta charset="UTF-8">
+ <!--This script allows the correct style to be loaded for the right screen size-->
+<script type="text/javascript">
+	//Setting the height and width 0 ready for later
+	var height = 0;
+	var width = 0;
+	//this gets the the size of the screen
+ function show(){
+	if (!document.all&&!document.layers&&!document.getElementById)
+	return
+	console.log(screen.width)
+	width = screen.width;
+	console.log(screen.height)
+	height = screen.height;
+	console.log(screen.colorDepth)
+	console.log(screen.pixelDepth)
+	console.log(screen.availWidth)
+	console.log(screen.availHeight)
+	}
+	//this function load the small screen style sheet
+function loadjscssfile1(){
+	console.log("running small")
+	var cssId = 'smallScreenSize'; 
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'smallScreenSize.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this loads the normal size stylesheet
+function loadjscssfile(){
+	console.log("running")
+	var cssId = 'style';  
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'style.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this runs the funcation show which will run the javascript 
+	show()
+	//this works out what style is going to be needed
+	if (width <= 1280 && height <= 1024) {
+	console.log("correct")
+	loadjscssfile1()
+	} else {
+	loadjscssfile()
+	}
+ </script>
+<title>About</title>
+ </head>
+ <body>
+  <!--this is the links in the top concor that links to facebook, google plus and email-->
+<div id="links">
+	<a href="https://www.facebook.com/groups/383349625208231/" target="blank"><img src="images/Facebook_Square@2x.png" title="Facebook" alt="Facebook"/></a>
+	<a href="https://plus.google.com/101925221517317221153/about" target="blank"><img src="images/Google_Plus_Square@2x.png" title="Google Plus" alt="Google Plus"/></a>
+	<a href="mailto:121944@student.midchesh.ac.uk" target="blank"><img src="images/Mail@2x.png" title="E-Mail" alt="E-Mail"/></a>
+ </div>
+<div id="logo">
+	<!--this shows the logo of the business-->
+	<img src="images/logo.png" alt="Logo" title="Logo" class="logoPic"/>
+</div>
+
+ <div id="main1"> 
+ <!--Main 1 id the continer for the website-->
+ 	<div id="nav">
+ 	<!--this shows the nav bar on screen-->
+	<a href="index.html"><img src="images/home.png" alt="Home" title="Home" class="home"/></a>
+	<a href="about.html"><img src="images/about.png" alt="About" title="About" class="about"/></a>
+	<a href="fees.html"><img src="images/fees.png" alt="Fees" title="Fees" class="fees"/></a>
+	<a href="activity.html"><img src="images/activity.png" title="Activity" alt="Activity" class="activity"/></a>
+	<a href="contact.html"><img src="images/contact.png" title="Contact" alt="Contact" class="contact"/></a>
+	</div>
+ 	<!--main text of the about page-->
+ <h1> About Me</h1>
+ <p>My name is Sheryl. I am in my thirties and I am a mum of three children (so I have lots of personal experience of children) and I am married to Andy. My children are Jake born in October 2002, Amy born in September 2003 and Chloe born in august 2011. I registered as a childminder in November 2009. I am Ofsted registered and my certificate can be seen hanging on the wall as you step through my front door, along with my liability insurance. Other useful information and posters are here too.
+	<p>I have also completed the following courses:-</p>
+	<!--training selection-->
+	<ul>
+		<li>NVQ Level 2 - Early Years Care & Education</li>
+		<li>First Aid for Childcarers</li>
+		<li>Basic Food Hygiene</li>
+		<li>ICC</li>
+		<li>Allergen Awareness Course</li>
+		<li>I am also in the process of working towards my NVQ Level 3 Diploma</li>
+	</ul>
+	<p>And I also attend regular training, either in the evenings or at the weekend. Some example of these courses:-</p>
+	<ul>
+		<li>Safeguarding</li>
+		<li>Supporting Communication</li>
+		<li>Revised EYFS Briefing</li>
+		<li>EYFS 2 Year Progress Check</li>
+	</ul>
+<p>I am also:-
+	<ul>
+		<li>Registered with the ICO</li>
+		<li>Member of PACEY</li>
+		<li>CRB Checked</li>
+	</ul>
+
+<p>Useful Links</p>
+<!--this is the useful links selection--> 
+	<p><a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/366016/IR115.pdf" target="blank">Childcare Vouchers</a> This is where your employer can pay your childcare from a proporation of your salary prior which is exempt from tax and national insurance</p>
+	<a href="http://www.direct.gov.uk/en/MoneyTaxAndBenefits/TaxCredits/Gettingstarted/whoqualifies/Childrenandtaxcredits/DG_073803" target="blank">Tax Credits</a>
+	<p><a href="http://www.direct.gov.uk/en/Parents/Preschooldevelopmentandlearning/NurseriesPlaygroupsReceptionClasses/DG_10016103" target="blank">Free Early Years Entitlement</a> We are currently in the process of being able to offer this entitlement</p>
+	<!--Our policies link-->
+	 <p><a href="polices.html">Our Policies</a></p>
+ </div>
+ <div class="footer">
+<small><p>Copyright &copy; Sheryl Stanley <span id="year"></span>, All rights reserved</p></small>
+<small<p><a href="sitemap.html">Site Map</a></p></small>
+<small><p>Powered By <a href="https://parse.com">Parse.com</a></p></small>
+</div>
+ </body>
+ </html>

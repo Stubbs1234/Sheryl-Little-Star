@@ -1,0 +1,51 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.0.min.js"></script>
+
+<table id="newsandupadte" class="table1" border="1xp" style="width:100%">
+        <col width="50">
+        <col width="50">
+        <col width="200">
+        <tbody>
+            <tr>
+                <th>Date</th>
+                <th>News Heading</th>
+                <th>Description</th>
+            </tr>
+        </tbody>
+    </table>
+
+<script type="text/javascript">
+	 Parse.initialize("amnZxwMwLA9rWnfbeSEvQx031gpgsSaFx11kR2zd", "4txvLwRkk8LVJVW05J1ynpVO2gg0eUqkt8wTE2bO");
+	
+var firstTeamResults = Parse.Object.extend("newsUpdates");
+var query = new Parse.Query(firstTeamResults);
+query.descending("updateAt");
+query.find({success: function(results){ 
+console.log(results) 
+if (results == "") { (function($) {
+                $("#newsandupadte").append("<tr><td class='ui-helper-center' colspan='5'>" 
+                	+ "No Data sorry about this i am aware of this error i will be fixing as soon as i can" 
+                    +"</td></tr>");
+            })(jQuery);
+       }else {     
+        for (var i = 0; i < results.length; i++) 
+        {
+            var object = results[i];
+               
+            (function($) {
+                $("#newsandupadte").append("<tr><td>"
+                    + object.get("dateAdded") 
+                    + "</td><td>" 
+                    + object.get("heading") 
+                    + "</td><td>"
+                    + object.get("des") 
+                    + "</td></tr>");
+            })(jQuery);
+       }
+    }
+    },
+    error: function(error) {
+        alert("Error: " + error.code + " " + error.message);
+    }
+});
+</script>

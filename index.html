@@ -1,0 +1,140 @@
+ <!DOCTYPE html>
+ <head>
+ <meta charset="UTF-8">
+ <!--These script link the parse.com to the website-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!--This script allows the correct style to be loaded for the right screen size-->
+ <script type="text/javascript">
+	//Setting the height and width 0 ready for later
+	var height = 0;
+	var width = 0;
+	//this gets the the size of the screen
+ function show(){
+	if (!document.all&&!document.layers&&!document.getElementById)
+	return
+	console.log(screen.width)
+	width = screen.width;
+	console.log(screen.height)
+	height = screen.height;
+	console.log(screen.colorDepth)
+	console.log(screen.pixelDepth)
+	console.log(screen.availWidth)
+	console.log(screen.availHeight)
+	}
+	//this function load the small screen style sheet
+function loadjscssfile1(){
+	console.log("running small")
+	var cssId = 'smallScreenSize'; 
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'smallScreenSize.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this loads the normal size stylesheet
+function loadjscssfile(){
+	console.log("running")
+	var cssId = 'style';  
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'style.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this runs the funcation show which will run the javascript 
+	show()
+	//this works out what style is going to be needed
+	if (width <= 1280 && height <= 1024) {
+	console.log("correct")
+	loadjscssfile1()
+	} else {
+	loadjscssfile()
+	}
+ </script>
+<title>Home</title>
+	<!--this show if the user has not got javascript asking them to download it to view the website-->
+	<noscript>
+		your web browsers does not support javascrip, Please download it <a href="https://www.java.com/en/download/">here</a>
+	</noscript>
+          <script type="text/javascript">
+         function login(showhide){
+if(showhide == "show"){
+    document.getElementById('popupbox').style.visibility="visible";
+}else if(showhide == "hide"){
+    document.getElementById('popupbox').style.visibility="hidden"; 
+}
+}
+     </script>
+ </head>
+ <body>
+ <!--this is the links in the top concor that links to facebook, google plus and email-->
+ <div id="links">
+     <a href=javascript:login('show');><img src="images/lock.png" title="Login" alt="Login"/></a>
+	<a href="https://www.facebook.com/groups/383349625208231/" target="blank"><img src="images/Facebook_Square@2x.png" title="Facebook" alt="Facebook"/></a>
+	<a href="https://plus.google.com/101925221517317221153/about" target="blank"><img src="images/Google_Plus_Square@2x.png" title="Google Plus" alt="Google Plus"/></a>
+	<a href="mailto:121944@student.midchesh.ac.uk" target="blank"><img src="images/Mail@2x.png" title="E-Mail" alt="E-Mail"/></a>
+ </div>
+     <div id="popupbox"> 
+<form name="login" action="login.php" method="post">
+<center>Username:</center>
+<center><input name="email" id="email" size="14" /></center>
+<center>Password:</center>
+<center><input name="password" id="email" type="password" size="14" /></center>
+<center><input type="submit" name="submit" value="login" /></center>
+</form>
+<br/>
+<center><a href="javascript:login('hide');">close</a></center> 
+</div> 
+
+ <!--this shows the logo of the business-->
+<div id="logo">
+	<img src="images/logo.png" title="Logo" alt="Logo" title="Logo" class="logoPic"/>
+</div>
+<!--Main 1 id the continer for the website-->
+ <div id="main1"> 
+	<!--this shows the nav bar on screen-->
+	<div id="nav">
+	<a href="index.html"><img src="images/home.png" alt="Home" title="Home" class="home"/></a>
+	<a href="about.html"><img src="images/about.png" alt="About" title="About" class="about"/></a>
+	<a href="fees.html"><img src="images/fees.png" alt="Fees" title="Fees" class="fees"/></a>
+	<a href="activity.html"><img src="images/activity.png" title="Activity" alt="Activity" class="activity"/></a>
+	<a href="contact.html"><img src="images/contact.png" title="Contact" alt="Contact" class="contact"/></a>
+	</div>
+	<!--this display the first picture on the screen-->
+<div id="heading">
+	<img src="images/IMG_20160112_183615.png" title="Sheryl's little Stars Sign" alt="Sign" border="0px" /><!--images/IMG_20160112_183615.jpg-->
+	</div>
+	<!--main text of the home page-->
+<h1>Welcome to sheryl's little stars</h1>
+	<h2>OFSTED Rating of "GOOD" Achieved September 2015</h2><br>
+		<p>My name is Sheryl, and I am Sheryl's Little Stars. I am an Ofsted registered childminder based in Crewe, Cheshire.</p>
+		<p>I am a member of PACEY (Professional Association for Childcare and Early Years) and have been registered as a childminder since Novbmer 2009. I am fully CRB checked, first aid trained, and I hold an NVQ3 in CCLD (Children's Care, Learning and Development). I have 4 Little Stars of my own, aged 13, 12, and 1.</p>
+		<p>I have a closed Facebook group (which is only open to parents of cared for children) on which our activites are detailed.</p>
+		<p>I am flexible with regards to hours, so if you require your child to start a little earlier, or finish later, please <a href="contact.html">contact</a> me.</p>
+ <!--This display the news selection on the webpage-->
+ <div id="news">
+<h3>Recent News and updates</h3>
+	<!--displays the last image on the home page-->
+		<img src="images/IMG_20160111_194236.png" class="homeBottom" title="Sheryl little stars" alt="Sheryl little stars"/>
+	</div>
+ 
+	</div>
+	<div class="footer">
+<small><p>Copyright &copy; Sheryl Stanley <span id="year"></span>, All rights reserved</p></small>
+<small<p><a href="sitemap.html">Site Map</a></p></small>
+<small><p>Powered By <a href="https://parse.com">Parse.com</a></p></small>
+</div>
+</body>
+</html>

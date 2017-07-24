@@ -1,0 +1,191 @@
+ <!DOCTYPE html>
+ <head>
+ <meta charset="UTF-8">
+<title>Activities</title>
+<!--This script allows the correct style to be loaded for the right screen size-->
+<script type="text/javascript">
+	//Setting the height and width 0 ready for later
+	var height = 0;
+	var width = 0;
+	//this gets the the size of the screen
+ function show(){
+	if (!document.all&&!document.layers&&!document.getElementById)
+	return
+	console.log(screen.width)
+	width = screen.width;
+	console.log(screen.height)
+	height = screen.height;
+	console.log(screen.colorDepth)
+	console.log(screen.pixelDepth)
+	console.log(screen.availWidth)
+	console.log(screen.availHeight)
+	}
+	//this function load the small screen style sheet
+function loadjscssfile1(){
+	console.log("running small")
+	var cssId = 'smallScreenSize'; 
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'smallScreenSize.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this loads the normal size stylesheet
+function loadjscssfile(){
+	console.log("running")
+	var cssId = 'style';  
+	if (!document.getElementById(cssId))
+		{
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.id   = cssId;
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'style.css';
+		link.media = 'all';
+		head.appendChild(link);
+		}
+	}
+	//this runs the funcation show which will run the javascript 
+	show()
+	//this works out what style is going to be needed
+	if (width <= 1280 && height <= 1024) {
+	console.log("correct")
+	loadjscssfile1()
+	} else {
+	loadjscssfile()
+	}
+ </script>
+ </head>
+ <body>
+ <!--this is the links in the top concor that links to facebook, google plus and email-->
+ <div id="links">
+	<a href="https://www.facebook.com/groups/383349625208231/" target="blank"><img src="images/Facebook_Square@2x.png" title="Facebook" alt="Facebook"/></a>
+	<a href="https://plus.google.com/101925221517317221153/about" target="blank"><img src="images/Google_Plus_Square@2x.png" title="Google Plus" alt="Google Plus"/></a>
+	<a href="mailto:121944@student.midchesh.ac.uk" target="blank"><img src="images/Mail@2x.png" title="E-Mail" alt="E-Mail"/></a>
+ </div>
+  <!--this shows the logo of the business-->
+<div id="logo">
+	<img src="images/logo.png" alt="Logo" title="Logo" class="logoPic"/>
+</div>
+<!--Main 1 id the continer for the website-->
+<div id="main1"> 
+	<!--this shows the nav bar on screen-->
+	<div id="nav">
+	<a href="index.html"><img src="images/home.png" alt="Home" title="Home" class="home"/></a>
+	<a href="about.html"><img src="images/about.png" alt="About" title="About" class="about"/></a>
+	<a href="fees.html"><img src="images/fees.png" alt="Fees" title="Fees" class="fees"/></a>
+	<a href="activity.html"><img src="images/activity.png" title="Activity" alt="Activity" class="activity"/></a>
+	<a href="contact.html"><img src="images/contact.png" title="Contact" alt="Contact" class="contact"/></a>
+	</div>
+	<!--main text of the activity page-->
+ <h1> Activities</h1>
+	<p>I have tried to put together a list of all the activities that are available for the children in my care to give you some understanding and knowledge of the types of activities the children will be able to undertake within my setting. This is quite an exhaustive list and I am certain there will be activities that I will have forgotten to add. If there are any activities which your child may enjoy and they are not listed below please feel free to discuss them with me. I am always looking for new activities, ideas, themes etc.</p>
+	<!--This show the img on the side of the page-->
+	<img src="images/DSC0104.png" title="Sand Pit" alt="SandPit" class="actPicture"/>
+	<!--this show the list of activity that can be done during service hours-->
+	<ul>
+		<li>Duplo / Lego</li>
+		<li>Happyland</li>
+		<li>Story time</li>
+		<li>Sandpit & water play</li>
+		<li>Writing</li>
+		<li>Reading</li>
+		<li>Painting</li>
+		<li>Jigsaws</li>
+		<li>Free play</li>
+		<li>Role play</li>
+		<li>Play dough</li>
+		<li>Board games - bingo, guess who, connect 4 etc</li>
+		<li>Nursery rhymes & music</li>
+		<li>Gardening</li>
+		<li>Outdoor play</li>
+		<li>Paddling pool</li>
+		<li>Ball games</li>
+		<li>Arts & crafts</li>
+		<li>Baking</li>
+		<li>Trampoline</li>
+		<li>Outings - Park, ducks, farm, shops, toddler groups</li>
+	</ul> 
+	<!--this show what is restricted period activities-->
+	<p class="red">For restricted periods only</p>
+	<ul>
+		<li>Wii</li>
+		<li>V tech V Smile</li>
+		<li>Playstation 2</li>
+		<li>Nintendo DS</li>
+	</ul>
+	<!--this is a bit about the table below-->
+<p>It is very important that I am aware of your child's routine as it makes them feel safe and secure.
+A variety of activities will be carried out during the day depending on the age of the children in my care.  Colouring, reading, baking and painting are all activities which we do.
+If parents want children who are coming to me after school to start on their homework, I would be happy to do this.
+I will also take children on outings which will include visits to the local parks, the local library and the shops.</p>
+ <p><b>Although each day in my childcare setting will be varied with activities, outings etc I have summarised below how a typical day will be spent.</b></p>
+ <!--this tabkle is an example of the activity timetable-->
+ <table>
+		<th>Time</th>
+		<th>Activity/Outing</th>
+		<th>Example</th>
+	<tr>
+		<td>8:00 - 8:30am</td>	<td>Arrival & breakfast if needed</td>	
+	</tr>
+	<tr>
+		<td>8:30 - 8:45am</td>	<td>Prepare for journey to school</td>	<td>Ensure children have coats, bags, lunches, shoes on etc</td>
+	</tr>
+	<tr>
+		<td>8:45 - 9:15am</td>	<td>School run</td>	
+	</tr>
+	<tr>
+		<td>9:30 - 10:30am</td>	<td>Activity time</td> 	<td>Baking, play dough, painting, arts & crafts, happyland</td>
+	</tr>
+	<tr>
+		<td>10:30 - 11:00am</td>	<td>Snack time</td>	<td>Drink with biscuit/fruit/toast</td>
+	</tr>
+	<tr>
+		<td>11:00 - 11:30am</td>	<td>Nursery run</td>	
+	</tr>
+	<tr>
+		<td>11:30 - 12:30pm</td>	<td>Activity time/preparing lunch</td>	<td>Free play</td> 
+	</tr>
+	<tr>
+		<td>12:30 - 13:00pm</td>	<td>Lunch time</td>	
+	</tr>
+	<tr>
+		<td>13:00 - 14:00</td> 	<td>Outing/outdoor play	<td>Feed ducks, park / ball games, sand pit, water play to ensure child gets fresh air</td>
+	</tr>
+	<tr>
+		<td>14:00 - 15:00</td>	<td>Quiet time/nap time	Reading books, listening to nursery rhymes, watching DVD</td>
+	</tr>
+	<tr>
+		<td>15:00 - 15:30</td>	<td>School run</td>	
+	</tr>
+	<tr>
+		<td>15:30 - 16:00</td>	<td>Snack time</td>	<td>Drink with fruit/crackers & cheese/ vegetable sticks & dip/biscuit</td>
+	</tr>
+	<tr>
+		<td>16:00 - 17:00</td>	<td>Activity time</td>	<td>Jigsaws, board games, Lego, imaginative play</td>
+	</tr>
+	<tr>
+		<td>17:00 - 17:30</td>	<td>Activity time/preparing tea	<td>Free play</td>
+	</tr>
+	<tr>
+		<td>17:30 - 18:00</td>	<td>Tea time</td>
+	</tr> 
+</table>
+<!--this explain what the table is for-->
+<p><b>This is only an example and your own child’s individual needs will be incorporated where needed i.e. sleep patterns, nursery times etc.</b></p>
+
+ </div>
+ <div class="footer">
+<small><p>Copyright &copy; Sheryl Stanley <span id="year"></span>, All rights reserved</p></small>
+<small<p><a href="sitemap.html">Site Map</a></p></small>
+<small><p>Powered By <a href="https://parse.com">Parse.com</a></p></small>
+</div>
+ </body>
+ </html>
